@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sanjeevika_doctor_app/view/screens/Details/Patient_details_screen.dart';
+import 'package:sanjeevika_doctor_app/view/screens/Loading_screen/loading_screen.dart';
+import 'package:sanjeevika_doctor_app/view/screens/home/Home_page.dart';
 import 'package:sanjeevika_doctor_app/view/screens/splash/Splash_screen.dart';
 
 void main() {
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Montserrat'),
-      home: Splash_screen(),
+      home: PatientDetailsScreen(),
     );
   }
 }

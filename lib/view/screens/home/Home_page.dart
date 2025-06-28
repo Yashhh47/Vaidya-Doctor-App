@@ -84,6 +84,57 @@ class _HomePageState extends State<HomePage> {
                     colors: [Color(0xffA1D8FF), Colors.white],
                     begin: Alignment.topCenter,
                     end: Alignment.center)),
+            child: Center(
+                child: Form(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Enter Patient ID",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: size / 22,
+                        color: Color(0xff005AC4)),
+                  ),
+                  Container(
+                      child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: size / 3.5, vertical: size / 35),
+                    child: TextFormField(
+                      textAlign: TextAlign.center,
+                      decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: Color(0xff005AC4),
+                            ),
+                            borderRadius: BorderRadius.circular(size / 25),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: size / 85, horizontal: size / 25),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(size / 25),
+                              borderSide: BorderSide(color: Color(0xffA1D8FF))),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(size / 25),
+                          ),
+                          filled: true,
+                          fillColor: Colors.white),
+                    ),
+                  )),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "GET DETAILS",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xff005AC4)),
+                  ),
+                ],
+              ),
+            )),
           ),
         ));
   }
