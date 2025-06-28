@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sanjeevika_doctor_app/view/screens/Details/Patient_details_screen.dart';
+import 'package:sanjeevika_doctor_app/view/screens/Loading_screen/loading_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,9 +11,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final TextEditingController _patientIdController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
+
     return SafeArea(
         top: false,
         child: Scaffold(
@@ -103,6 +107,7 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.symmetric(
                         horizontal: size / 3.5, vertical: size / 35),
                     child: TextFormField(
+                      controller: _patientIdController,
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
@@ -126,7 +131,29 @@ class _HomePageState extends State<HomePage> {
                   )),
                   ElevatedButton(
                     onPressed: () {
-                      Get.to(PatientDetailsScreen());
+                      if (_patientIdController.text.trim().isNotEmpty) {
+                        Get.dialog(
+                          loading_screen(),
+                          barrierDismissible: false,
+                        );
+
+                        Future.delayed(Duration(seconds: 3), () {
+                          Get.back(); // Close the dialog
+                          Get.to(
+                              () => PatientDetailsScreen(
+                                    patientId: _patientIdController.text.trim(),
+                                  ),
+                              transition: Transition.rightToLeft,
+                              duration: Duration(milliseconds: 300));
+                        });
+                      } else {
+                        Get.snackbar(
+                          'Error',
+                          'Please enter a valid Patient ID',
+                          backgroundColor: Colors.red,
+                          colorText: Colors.white,
+                        );
+                      }
                     },
                     child: Text(
                       "GET DETAILS",
@@ -141,5 +168,11 @@ class _HomePageState extends State<HomePage> {
             )),
           ),
         ));
+  }
+
+  @override
+  void dispose() {
+    _patientIdController.dispose();
+    super.dispose();
   }
 }

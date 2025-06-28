@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:sanjeevika_doctor_app/view/screens/Details/Patient_details_screen.dart';
 
 class loading_screen extends StatefulWidget {
   const loading_screen({super.key});
