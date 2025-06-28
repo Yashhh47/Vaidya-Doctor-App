@@ -3,6 +3,7 @@
 
 **[Download APK](https://drive.google.com/file/d/1XwU114HwW6INw5xIbgfn6qXqbb3zBJhE/view)** 
 
+
 ## 📱 App Preview
 
 <p align="center">
@@ -10,7 +11,7 @@
 </p>
 
 
-🔗 **Main GitHub Repository:** [https://github.com/Keshav8605/Sanjeevika](https://github.com/Keshav8605/Sanjeevika
+🔗 **Main GitHub Repository:**(https://github.com/Keshav8605/Sanjeevika)
 
 
 ## 👨‍💻 Meet Team Sanjeevani
