@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sanjeevika_doctor_app/view/screens/Details/Patient_details_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -123,7 +125,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   )),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(PatientDetailsScreen());
+                    },
                     child: Text(
                       "GET DETAILS",
                       style: TextStyle(
