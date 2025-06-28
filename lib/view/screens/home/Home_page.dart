@@ -141,7 +141,9 @@ class _HomePageState extends State<HomePage> {
                           Get.back(); // Close the dialog
                           Get.to(
                               () => PatientDetailsScreen(
-                                    patientId: _patientIdController.text.trim(),
+                                    patientId: _patientIdController.text
+                                        .trim()
+                                        .toUpperCase(),
                                   ),
                               transition: Transition.rightToLeft,
                               duration: Duration(milliseconds: 300));
